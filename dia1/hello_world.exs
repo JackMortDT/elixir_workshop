@@ -12,6 +12,12 @@ defmodule Hello do
   def fib(0), do: 0
   def fib(1), do: 1
   def fib(n), do: fib(n-2) + fib(n-1)
+
+  def count(list) do
+    counting(list, 0)
+  end
+  defp counting([], counter), do: counter
+  defp counting([_h|t], counter), do: counting(t, counter + 1)
 end
 
 IO.puts(Hello.print())
