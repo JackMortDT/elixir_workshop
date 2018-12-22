@@ -6,8 +6,7 @@ end
 
 IO.puts result
 
-tuple = {:ok, 123}
-
+tuple = {:ok, 123.12}
 result = case tuple do
   {:ok, result} when is_float(result) -> result * 2
   {:ok, result} when is_binary(result) -> result
