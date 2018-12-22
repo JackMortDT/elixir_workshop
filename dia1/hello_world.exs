@@ -18,7 +18,9 @@ defmodule Hello do
     |> Enum.map(fn x -> x*3 end)
     |> Enum.filter(fn x -> x > 15 end)
     |> Enum.filter(fn x -> rem(x,2) == 0 end)
+    |> count
   end
+
 end
 
 IO.puts(Hello.print())
