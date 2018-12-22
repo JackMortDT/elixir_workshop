@@ -1,5 +1,6 @@
 defmodule Greeter do
-  def hello(map) do
-    IO.puts "Hello #{map[:name]}"
+  def hello(%{name: name} = person) do
+    IO.puts "Hello #{name}"
+    IO.inspect person
   end
 end
