@@ -8,4 +8,11 @@ defmodule Twinder.AlphabetCipher.Test do
     assert result == "egsgqwtahuiljgs"
   end
 
+  test "Decode a message" do
+    message = "egsgqwtahuiljgs"
+    secret = "scone"
+    result = AlphabetCipher.decode(message, secret)
+    assert result == "meetmebythetree"
+  end
+
 end
