@@ -17,7 +17,7 @@ defmodule Twinder.Network do
   end
 
   defp parse_response(%Response{body: body}) do
-    import Poison, only: [decode!: 1]
+    import Poison, only: [decode!: 1]
     body
     |> decode!
   end
