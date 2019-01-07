@@ -1,5 +1,6 @@
 defmodule Twinder.AlphabetCipher.Test do
   use ExUnit.Case
+  alias Twinder.AlphabetCipher
 
   test "Cipher a message" do
     message = "meetmebythetree"
