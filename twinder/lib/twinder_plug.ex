@@ -1,14 +1,19 @@
 defmodule Twinder.Plug do
-  import Plug.Conn
+  use Plug.Router
 
-  def init(options) do
-    options
+  plug Plug.Logger
+  plug :match
+  plug :dispatch
+
+  get "/hello" do
+    send_resp(conn, 200, "wolrd")
   end
 
-  def call(conn, _opts) do
-    conn
-    |> IO.inspect
-    |> put_resp_content_type("text/plain")
-    |> send_resp(200, "Hola edmund!")
+  post "/hello" do
+    send_resp(conn, 200, "Done!! ^_^")
+  end
+
+  match _ do
+    send_resp(conn, 404, "Not found, oops!!!")
   end
 end
