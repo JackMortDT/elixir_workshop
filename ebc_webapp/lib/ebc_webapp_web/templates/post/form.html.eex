@@ -17,6 +17,13 @@
   <%= text_input f, :body %>
   <%= error_tag f, :body %>
 
+  <%= select f, :age, 18..100 %>
+  <select>
+    <%= for user <- @users do %>
+      <%= label f, :user %>
+    <% end %>
+  </select>
+
   <div>
     <%= submit "Save" %>
   </div>

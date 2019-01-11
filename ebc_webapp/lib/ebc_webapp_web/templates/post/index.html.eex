@@ -6,6 +6,7 @@
       <th>Title</th>
       <th>Publication date</th>
       <th>Body</th>
+      <th>User</th>
 
       <th></th>
     </tr>
@@ -16,6 +17,7 @@
       <td><%= post.title %></td>
       <td><%= post.publication_date %></td>
       <td><%= post.body %></td>
+      <td><%= @user.username %></td>
 
       <td>
         <%= link "Show", to: Routes.post_path(@conn, :show, post) %>

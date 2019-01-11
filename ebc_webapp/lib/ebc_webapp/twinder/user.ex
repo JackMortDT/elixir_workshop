@@ -8,7 +8,7 @@ defmodule EbcWebapp.Twinder.User do
     field :email, :string
     field :full_name, :string
     field :username, :string
-    has_many :post, Post
+    has_many :posts, Post
 
     timestamps()
   end

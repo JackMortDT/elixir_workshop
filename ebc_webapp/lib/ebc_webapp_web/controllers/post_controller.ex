@@ -3,15 +3,19 @@ defmodule EbcWebappWeb.PostController do
 
   alias EbcWebapp.Publication
   alias EbcWebapp.Publication.Post
+  alias EbcWebapp.Twinder
+  alias EbcWebapp.Twinder.User
 
   def index(conn, _params) do
     posts = Publication.list_posts()
-    render(conn, "index.html", posts: posts)
+    user = Twinder.get_user! 1
+    render(conn, "index.html", posts: posts, user: user)
   end
 
   def new(conn, _params) do
     changeset = Publication.change_post(%Post{})
-    render(conn, "new.html", changeset: changeset)
+    users = Twinder.list_users()
+    render(conn, "new.html", changeset: changeset, users: users)
   end
 
   def create(conn, %{"post" => post_params}) do
