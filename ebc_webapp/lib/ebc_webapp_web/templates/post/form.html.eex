@@ -17,12 +17,14 @@
   <%= text_input f, :body %>
   <%= error_tag f, :body %>
 
-  <%= select f, :age, 18..100 %>
-  <select>
-    <%= for user <- @users do %>
-      <%= label f, :user %>
-    <% end %>
-  </select>
+  <select class="custom-select mr-sm-2">
+      <option disabled value="" selected hidden>Seleccionar</option>
+      <%= for user <- @users do %>
+        <option <%= :user %> >
+          <%= user.username %>
+        </option>
+      <% end %>
+    </select>
 
   <div>
     <%= submit "Save" %>
